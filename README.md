@@ -1,6 +1,6 @@
 # Rock Paper Scissors
 
-- First JavaScript project from The Odin Project curriculum.
+First JavaScript project from The Odin Project curriculum.
 
 ## Analysis (understanding):
 
@@ -22,4 +22,11 @@
 
 - Game overs when one of the players first wins 5 points.
 
-## 
+## Pseudocode
+
+PRINT start speech for User. <br>
+PRINT rules for gaming. <br>
+Take user's INPUT. <br>
+GENERATE random choice from Computer's side of game. <br>
+CHECK user's and Computer's choices. <br>
+WHILE of the players won't get 5 points - continue playing. <br>
