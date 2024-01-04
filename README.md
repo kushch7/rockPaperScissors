@@ -22,7 +22,7 @@ First JavaScript project from The Odin Project curriculum.
 
 - Game overs when one of the players first wins 5 points.
 
-## Pseudocode
+## Pseudo code
 
 PRINT start speech for User. <br>
 PRINT rules for gaming. <br>
