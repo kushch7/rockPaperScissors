@@ -1,30 +1,67 @@
 let items = ['rock', 'paper', 'scissors']
-let pcChoice = ""
-let userChoice = ""
 let userScore = 0
 let pcScore = 0
+let playerSelection
+let computerSelection
 
-function getComputerChoice() {
-    return "PC: " +  items[Math.floor(Math.random() * 3)]
+let userItem
+let pcItem
+
+let pcChoice = function() {
+    pcItem = items[Math.floor(Math.random() * 3)]
+    return pcItem
 }
 
-function getUserChoice() {
-    userChoice = prompt("What is your choice: 'rock', 'paper' or 'scissors'?").toLowerCase()
+let userChoice = function() {
+    userItem = prompt("What is your choice: 'rock', 'paper' or 'scissors'?").toLowerCase()
 
-    while (userChoice != "rock" && userChoice != "paper" && userChoice != "scissors") {
-        userChoice = prompt("Try again!").toLowerCase()
+    while (userItem != "rock" && userItem != "paper" && userItem != "scissors") {
+        userItem = prompt("Try again!").toLowerCase()
     }
 
-    return "User: " + userChoice
+    return userItem
 }
 
+playerSelection = userChoice()
+computerSelection = pcChoice()
 
-function playRound(userItem, pcItem) {
-    if (userItem == pcItem) {
-        return "--- TIE! ---"
+
+function playRound(user, pc) {
+
+    console.log(`User: ${playerSelection}`)
+    console.log(`PC: ${computerSelection}`)
+
+    if (user == pc) {
+
+        return "--- TIE! --- "
+
+    } else if (pc == "rock"){
+
+        if (user == "paper") {
+            return "--- WIN! ---"
+        } else if (user == "scissors") {
+            return "--- LOSE! ---"
+        }
+
+    } else if (pc == "paper"){
+
+        if (user == "scissors") {
+            return "--- WIN! ---"
+        } else if (user == "rock") {
+            return "--- LOSE! ---"
+        }
+
+    } else if (pc == "scissors"){
+
+        if (user == "rock") {
+            return "--- WIN! ---"
+        } else if (user == "paper") {
+            return "--- LOSE! ---"
+        }
+
     }
+
 }
 
-console.log(playRound(getUserChoice(), getComputerChoice()))
-
+console.log(playRound(playerSelection, computerSelection))
 
