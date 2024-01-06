@@ -9,6 +9,7 @@ let pcItem
 
 let pcChoice = function() {
     pcItem = items[Math.floor(Math.random() * 3)]
+
     return pcItem
 }
 
@@ -22,11 +23,11 @@ let userChoice = function() {
     return userItem
 }
 
-playerSelection = userChoice()
-computerSelection = pcChoice()
-
 
 function playRound(user, pc) {
+
+    playerSelection = userChoice()
+    computerSelection = pcChoice()
 
     console.log(`User: ${playerSelection}`)
     console.log(`PC: ${computerSelection}`)
@@ -63,5 +64,10 @@ function playRound(user, pc) {
 
 }
 
-console.log(playRound(playerSelection, computerSelection))
+function game(rounds){
+    for (let i = 0; i < rounds; i++) {
+        console.log(playRound(playerSelection, computerSelection))
+    }
+}
 
+game(5)
